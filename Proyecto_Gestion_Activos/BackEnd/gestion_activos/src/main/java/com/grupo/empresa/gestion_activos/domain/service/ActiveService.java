@@ -15,19 +15,19 @@ public class ActiveService {
     private final IActiveRepository iActiveRepository;
 
     public List<ActiveDto> getAllActive() {
-        return iActiveRepository.getAllActive();
+        return iActiveRepository.findAll();
     }
 
     public Optional<ActiveDto> getActive(int id) {
-        return iActiveRepository.getActive(id);}
+        return iActiveRepository.findById(id);}
 
     public ActiveDto saveActive(ActiveDto active) {
-        return iActiveRepository.saveActive(active);
+        return iActiveRepository.update(active);
     }
 
     public boolean deleteActive(int activeId) {
         return getActive(activeId).map(active -> {
-            iActiveRepository.deleteActive(activeId);
+            iActiveRepository.deleteById(activeId);
             return true;
         }).orElse(false);
     }
@@ -43,5 +43,4 @@ public class ActiveService {
     public Optional<List<ActiveDto>> getActiveByDate(Date date){
         return  iActiveRepository.getActiveByDate(date);
     }
-
 }

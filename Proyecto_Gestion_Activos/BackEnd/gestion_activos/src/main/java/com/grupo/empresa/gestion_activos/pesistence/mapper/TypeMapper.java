@@ -1,6 +1,5 @@
 package com.grupo.empresa.gestion_activos.pesistence.mapper;
 
-import com.grupo.empresa.gestion_activos.domain.dto.ActiveDto;
 import com.grupo.empresa.gestion_activos.domain.dto.MaterialOfficeDto;
 import com.grupo.empresa.gestion_activos.pesistence.entity.MaterialOficinaEntity;
 import org.mapstruct.InheritInverseConfiguration;
@@ -9,7 +8,7 @@ import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 import java.util.List;
 
-@Mapper(componentModel = "spring", uses ={PositionMapper.class, ActiveDto.class})
+@Mapper(componentModel = "spring", uses ={PositionMapper.class, ActiveMapper.class})
 public interface TypeMapper {
 
     @Mappings({

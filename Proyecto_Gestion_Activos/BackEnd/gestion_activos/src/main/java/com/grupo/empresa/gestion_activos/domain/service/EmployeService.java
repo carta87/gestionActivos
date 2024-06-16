@@ -13,17 +13,17 @@ public class EmployeService {
 
     private final IEmployeRepository iEmployeRepository;
 
-    public List<EmployedDto> getAllPerson(){return iEmployeRepository.getAllEmploye();}
+    public List<EmployedDto> getAllPerson(){return iEmployeRepository.findAll();}
 
     public Optional<EmployedDto> getEmploye(int id){
-        return iEmployeRepository.getEmploye(id); }
+        return iEmployeRepository.findById(id); }
 
     public EmployedDto savePerson(EmployedDto person){
-        return iEmployeRepository.saveEmploye(person);}
+        return iEmployeRepository.update(person);}
 
     public boolean deletePerson(int personaId){
         return getEmploye(personaId).map(person ->{
-           iEmployeRepository.deleteEmploye(personaId);
+           iEmployeRepository.deleteById(personaId);
            return true;
         }).orElse(false);
     }

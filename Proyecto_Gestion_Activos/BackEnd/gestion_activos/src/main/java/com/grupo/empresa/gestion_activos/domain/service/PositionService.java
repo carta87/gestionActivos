@@ -13,18 +13,18 @@ public class PositionService   {
 
     private final IPositionRepository iPositionRepository;
 
-    public List<PositionDto> getAllPosition(){return iPositionRepository.getAllPosition();}
+    public List<PositionDto> getAllPosition(){return iPositionRepository.findAll();}
 
     public Optional<PositionDto> getPosition(int id){
-        return iPositionRepository.getPosition(id);}
+        return iPositionRepository.findById(id);}
 
     public PositionDto savePosition(PositionDto position) {
-        return iPositionRepository.savePosition(position);
+        return iPositionRepository.update(position);
     }
 
     public boolean deletePosition(int positionId) {
         return getPosition(positionId).map(position -> {
-            iPositionRepository.deletePosition(positionId);
+            iPositionRepository.deleteById(positionId);
             return true;
         }).orElse(false);
     }

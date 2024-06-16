@@ -5,7 +5,6 @@ import com.grupo.empresa.gestion_activos.pesistence.entity.CiudadEntity;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-
 import java.util.List;
 
 @Mapper(componentModel = "spring")

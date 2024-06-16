@@ -18,22 +18,22 @@ public class MaquinariaServiceImpl implements IMachineRepository {
     private final MaquinaRepository maquinaRepository;
 
     @Override
-    public List<MachineDto> getAllMachine() {
+    public List<MachineDto> findAll() {
         return machineMapper.mapListDto((List<MaquinariaEntity>) maquinaRepository.findAll());
     }
 
     @Override
-    public Optional<MachineDto> getMachine(int id) {
+    public Optional<MachineDto> findById(Integer id) {
         return maquinaRepository.findById(id).map(machineMapper::mapDto);
     }
 
     @Override
-    public MachineDto saveMachine(MachineDto machine) {
+    public MachineDto update(MachineDto machine) {
         return machineMapper.mapDto(maquinaRepository.save(machineMapper.mapEntity(machine)));
     }
 
     @Override
-    public void deleteMachine(int machineId) {
+    public void deleteById(Integer machineId) {
         maquinaRepository.deleteById(machineId);
     }
 }

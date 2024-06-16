@@ -18,22 +18,22 @@ public class TipoServiceImp implements ITypeRepository {
     private final TipoRepository tipoRepository;
 
     @Override
-    public List<MaterialOfficeDto> getAllType() {
+    public List<MaterialOfficeDto> findAll() {
         return typeMapper.mapListDto((List<MaterialOficinaEntity>) tipoRepository.findAll());
     }
 
     @Override
-    public Optional<MaterialOfficeDto> getType(int id) {
+    public Optional<MaterialOfficeDto> findById(Integer id) {
         return tipoRepository.findById(id).map(typeMapper::mapDto);
     }
 
     @Override
-    public MaterialOfficeDto saveType(MaterialOfficeDto type) {
+    public MaterialOfficeDto update(MaterialOfficeDto type) {
         return typeMapper.mapDto(tipoRepository.save(typeMapper.mapEntity(type)));
     }
 
     @Override
-    public void deleteType(int typeId) {
+    public void deleteById(Integer typeId) {
         tipoRepository.deleteById(typeId);
     }
 }

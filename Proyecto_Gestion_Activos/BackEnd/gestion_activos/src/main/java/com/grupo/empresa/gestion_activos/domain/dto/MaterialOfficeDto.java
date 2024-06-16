@@ -10,5 +10,4 @@ import lombok.Setter;
 public class MaterialOfficeDto extends ActiveDto {
 
     private String condition;
-
 }

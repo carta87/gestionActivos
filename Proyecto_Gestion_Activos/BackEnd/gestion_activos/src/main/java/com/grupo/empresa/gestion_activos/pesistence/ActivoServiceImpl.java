@@ -15,27 +15,27 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class ActivoServiceImpl implements IActiveRepository {
 
-    private final ActivoRepository activoRepository;
     private final ActiveMapper activeMapper;
+    private final ActivoRepository activoRepository;
 
     @Override
-    public List<ActiveDto> getAllActive() {
+    public List<ActiveDto> findAll() {
         return activeMapper.mapListDto((List<ActivoEntity>)activoRepository.findAll());
     }
 
     @Override
-    public Optional<ActiveDto> getActive(int id) {
+    public Optional<ActiveDto> findById(Integer id) {
         return activoRepository.findById(id).map(activeMapper::mapDto);
     }
 
     @Override
-    public ActiveDto saveActive(ActiveDto active) {
+    public ActiveDto update(ActiveDto active) {
         return activeMapper.mapDto(activoRepository.save(activeMapper.mapEntity(active)));
     }
 
     @Override
-    public void deleteActive(int activeId) {
-        activoRepository.deleteById(activeId);
+    public void deleteById(Integer entityId) {
+        activoRepository.deleteById(entityId);
     }
 
 

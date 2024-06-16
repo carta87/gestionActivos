@@ -14,17 +14,17 @@ public class MachineService {
     private final IMachineRepository iMachineRepository;
 
     public List<MachineDto> getAllMachine(){
-        return iMachineRepository.getAllMachine();}
+        return iMachineRepository.findAll();}
 
     public Optional<MachineDto> getMachine(int id){
-        return iMachineRepository.getMachine(id);}
+        return iMachineRepository.findById(id);}
 
     public MachineDto saveMachine(MachineDto machine){
-        return iMachineRepository.saveMachine(machine);}
+        return iMachineRepository.update(machine);}
 
     public boolean deleteMachine(int machineId){
         return getMachine(machineId).map(machine -> {
-            iMachineRepository.deleteMachine(machineId);
+            iMachineRepository.deleteById(machineId);
             return true;
         }).orElse(false);
     }

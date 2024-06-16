@@ -14,17 +14,17 @@ public class FurnitureService {
     private final IFurnitureRepository iFurnitureRepository;
 
     public List<PossessionDto> getAllFurniture(){
-        return iFurnitureRepository.getAllFurniture();}
+        return iFurnitureRepository.findAll();}
 
     public Optional<PossessionDto> getFurniture(int id){
-        return iFurnitureRepository.getFurniture(id);}
+        return iFurnitureRepository.findById(id);}
 
     public PossessionDto saveFurniture(PossessionDto furniture){
-        return iFurnitureRepository.saveFurniture(furniture);}
+        return iFurnitureRepository.update(furniture);}
 
     public boolean deleteFurniture(int furnitureId){
         return getFurniture(furnitureId).map(furniture ->{
-            iFurnitureRepository.deleteFurniture(furnitureId);
+            iFurnitureRepository.deleteById(furnitureId);
             return true;
         }).orElse(false);
     }

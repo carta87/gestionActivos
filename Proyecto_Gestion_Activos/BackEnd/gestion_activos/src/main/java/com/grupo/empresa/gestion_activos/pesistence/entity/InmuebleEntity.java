@@ -11,5 +11,4 @@ import lombok.Setter;
 public class InmuebleEntity extends ActivoEntity {
 
     private String ubicacion;
-
 }

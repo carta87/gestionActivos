@@ -36,5 +36,4 @@ public class ActivoEntity  {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name= "id", insertable = false, updatable = false)
     private AreaEntity areaEntity;
-
 }

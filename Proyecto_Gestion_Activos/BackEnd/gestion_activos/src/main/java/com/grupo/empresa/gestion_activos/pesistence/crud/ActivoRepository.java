@@ -5,7 +5,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-
 import java.util.Date;
 import java.util.List;
 
@@ -23,5 +22,4 @@ public interface ActivoRepository extends CrudRepository<ActivoEntity, Integer> 
 
     @Query (value= "SELECT * FROM activo WHERE activo.tipo LIKE %:filtro%", nativeQuery = true)
     List<ActivoEntity> encontrarTipo(@Param("filtro") String tipo);
-
 }

@@ -18,22 +18,22 @@ public class CuidadServiceImpl implements ICityRepository {
     private final CiudadRepository ciudadRepository;
 
     @Override
-    public List<CityDto> getAllCity() {
+    public List<CityDto> findAll() {
         return cityMapper.mapListDto((List<CiudadEntity>) ciudadRepository.findAll());
     }
 
     @Override
-    public Optional<CityDto> getCity(int id) {
+    public Optional<CityDto> findById(Integer id) {
         return ciudadRepository.findById(id).map(cityMapper::mapToDto);
     }
 
     @Override
-    public CityDto saveCity(CityDto city) {
+    public CityDto update(CityDto city) {
         return cityMapper.mapToDto(ciudadRepository.save(cityMapper.mapEntity(city)));
     }
 
     @Override
-    public void deleteCity(int cityId) {
-        ciudadRepository.deleteById(cityId);
+    public void deleteById(Integer entityId) {
+        ciudadRepository.deleteById(entityId);
     }
 }

@@ -15,5 +15,4 @@ public class CiudadEntity implements Serializable {
     private Integer id;
     @Column(name = "nombre_ciudad")
     private String nombreCiudad;
-
 }

@@ -18,22 +18,22 @@ public class CargoServiceImpl implements IPositionRepository {
     private final CargoRepository cargoRepository;
 
     @Override
-    public List<PositionDto> getAllPosition() {
+    public List<PositionDto> findAll() {
         return positionMapper.mapListDto((List<AreaEntity>) cargoRepository.findAll());
     }
 
     @Override
-    public Optional<PositionDto> getPosition(int id) {
+    public Optional<PositionDto> findById(Integer id) {
         return cargoRepository.findById(id).map(positionMapper::mapDto);
     }
 
     @Override
-    public PositionDto savePosition(PositionDto position) {
+    public PositionDto update(PositionDto position) {
         return positionMapper.mapDto(cargoRepository.save(positionMapper.mapEntity(position)));
     }
 
     @Override
-    public void deletePosition(int positionId) {
+    public void deleteById(Integer positionId) {
         cargoRepository.deleteById(positionId);
     }
 }

@@ -18,22 +18,22 @@ public class MuebleServiceImpl implements IFurnitureRepository {
     private final InMuebleRepository inMuebleRepository;
 
     @Override
-    public List<PossessionDto> getAllFurniture() {
+    public List<PossessionDto> findAll() {
         return furnitureMapper.mapListDto((List<InmuebleEntity>) inMuebleRepository.findAll());
     }
 
     @Override
-    public Optional<PossessionDto> getFurniture(int id) {
+    public Optional<PossessionDto> findById(Integer id) {
         return inMuebleRepository.findById(id).map(furnitureMapper::mapDto);
     }
 
     @Override
-    public PossessionDto saveFurniture(PossessionDto furniture) {
+    public PossessionDto update(PossessionDto furniture) {
         return furnitureMapper.mapDto(inMuebleRepository.save(furnitureMapper.mapEntity(furniture)));
     }
 
     @Override
-    public void deleteFurniture(int furnitureId) {
+    public void deleteById(Integer furnitureId) {
         inMuebleRepository.deleteById(furnitureId);
     }
 }

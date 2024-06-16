@@ -2,10 +2,8 @@ package com.grupo.empresa.gestion_activos.pesistence.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 @Entity
 @Table(name = "empleado")
@@ -24,5 +22,4 @@ public class EmpleadoEntity {
 
     @OneToOne(cascade = CascadeType.ALL)
     private AreaEntity areaEntity;
-
 }

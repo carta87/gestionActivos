@@ -10,5 +10,4 @@ import lombok.Setter;
 public class MachineDto extends ActiveDto {
 
     private String brand;
-
 }

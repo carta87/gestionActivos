@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @Repository
 @RequiredArgsConstructor
-public class CargoServiceImpl implements IPositionRepository {
+public class CargoRepositoryImp implements IPositionRepository {
 
     private final PositionMapper positionMapper;
     private final CargoRepository cargoRepository;

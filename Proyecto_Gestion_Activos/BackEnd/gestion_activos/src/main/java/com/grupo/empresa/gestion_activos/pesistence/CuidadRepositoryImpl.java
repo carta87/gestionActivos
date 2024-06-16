@@ -7,12 +7,13 @@ import com.grupo.empresa.gestion_activos.pesistence.entity.CiudadEntity;
 import com.grupo.empresa.gestion_activos.pesistence.mapper.CityMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
+
 import java.util.List;
 import java.util.Optional;
 
 @Repository
 @RequiredArgsConstructor
-public class CuidadServiceImpl implements ICityRepository {
+public class CuidadRepositoryImpl implements ICityRepository {
 
     private final CityMapper cityMapper;
     private final CiudadRepository ciudadRepository;

@@ -7,12 +7,13 @@ import com.grupo.empresa.gestion_activos.pesistence.entity.MaquinariaEntity;
 import com.grupo.empresa.gestion_activos.pesistence.mapper.MachineMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
+
 import java.util.List;
 import java.util.Optional;
 
 @Repository
 @RequiredArgsConstructor
-public class MaquinariaServiceImpl implements IMachineRepository {
+public class MaquinariaRepositoryImpl implements IMachineRepository {
 
     private final MachineMapper machineMapper;
     private final MaquinaRepository maquinaRepository;

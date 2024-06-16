@@ -7,12 +7,13 @@ import com.grupo.empresa.gestion_activos.pesistence.entity.InmuebleEntity;
 import com.grupo.empresa.gestion_activos.pesistence.mapper.FurnitureMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
+
 import java.util.List;
 import java.util.Optional;
 
 @Repository
 @RequiredArgsConstructor
-public class MuebleServiceImpl implements IFurnitureRepository {
+public class MuebleRepositoryImpl implements IFurnitureRepository {
 
     private final FurnitureMapper furnitureMapper;
     private final InMuebleRepository inMuebleRepository;

@@ -2,21 +2,21 @@ package com.grupo.empresa.gestion_activos.pesistence;
 
 import com.grupo.empresa.gestion_activos.domain.dto.ActiveDto;
 import com.grupo.empresa.gestion_activos.domain.repository.IActiveRepository;
-import com.grupo.empresa.gestion_activos.pesistence.crud.ActivoRepository;
 import com.grupo.empresa.gestion_activos.pesistence.entity.ActivoEntity;
 import com.grupo.empresa.gestion_activos.pesistence.mapper.ActiveMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
+
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
 @Repository
 @RequiredArgsConstructor
-public class ActivoServiceImpl implements IActiveRepository {
+public class ActivoRepositoryImp implements IActiveRepository {
 
     private final ActiveMapper activeMapper;
-    private final ActivoRepository activoRepository;
+    private final com.grupo.empresa.gestion_activos.pesistence.crud.ActivoRepository activoRepository;
 
     @Override
     public List<ActiveDto> findAll() {

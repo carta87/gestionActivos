@@ -7,12 +7,13 @@ import com.grupo.empresa.gestion_activos.pesistence.entity.EmpleadoEntity;
 import com.grupo.empresa.gestion_activos.pesistence.mapper.EmployeeMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
+
 import java.util.List;
 import java.util.Optional;
 
 @Repository
 @RequiredArgsConstructor
-public class EnpleadoServiceImpl implements IEmployeRepository {
+public class EnpleadoRepositoryImpl implements IEmployeRepository {
 
     private final EmployeeMapper employeeMapper;
     private final EmpleadoRepository empleadoRepository;

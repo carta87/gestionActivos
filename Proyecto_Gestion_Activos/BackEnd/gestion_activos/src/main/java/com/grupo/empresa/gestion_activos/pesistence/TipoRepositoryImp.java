@@ -7,12 +7,13 @@ import com.grupo.empresa.gestion_activos.pesistence.entity.MaterialOficinaEntity
 import com.grupo.empresa.gestion_activos.pesistence.mapper.TypeMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
+
 import java.util.List;
 import java.util.Optional;
 
 @Repository
 @RequiredArgsConstructor
-public class TipoServiceImp implements ITypeRepository {
+public class TipoRepositoryImp implements ITypeRepository {
 
     private final TypeMapper typeMapper;
     private final TipoRepository tipoRepository;

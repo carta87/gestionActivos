@@ -22,4 +22,15 @@ public class EmpleadoEntity {
 
     @OneToOne(cascade = CascadeType.ALL)
     private AreaEntity areaEntity;
+
+    @Column(name = "numero_conctacto")
+    private String numeroConctacto;
+
+    private String email;
+
+    private String password;
+
+    private String status;
+
+    private String role;
 }

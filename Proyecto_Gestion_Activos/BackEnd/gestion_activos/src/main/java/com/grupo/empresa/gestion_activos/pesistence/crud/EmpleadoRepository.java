@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface EmpleadoRepository extends CrudRepository<EmpleadoEntity, Integer> {
+
+    EmpleadoEntity findByEmail(String enamil);
 }
